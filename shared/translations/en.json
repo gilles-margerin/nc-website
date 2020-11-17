@@ -1,0 +1,26 @@
+{ 
+  "id":"en",
+  "language": "English",
+  "title": "Natalia Gracia - Homepage",
+  "presentation": [
+    "Welcome!",
+    "Translation services",
+    "Spanish, english, portuguese",
+    "Expertise in finance and trading fields",
+    "Proofreading",
+    "Subtitling"
+  ],
+  "intro": [
+    "Looking for fast, qualitative translation?",
+    "I will be happy to help you with yout project!",
+    "Contact"
+  ],
+  "contact": [
+    "Name",
+    "Email",
+    "Subject",
+    "Your message",
+    "Upload files(s)",
+    "Send"
+  ]
+}
