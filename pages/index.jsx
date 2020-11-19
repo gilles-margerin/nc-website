@@ -35,11 +35,13 @@ function Home(props) {
         <script defer src="https://friconix.com/cdn/friconix.js"></script>
       </Head>
       <Navbar handleLangSelect={handleLangSelect} langSelect={props.langSelect} language={props.language}/>
-      <main className="main-container">
-        <Presentation language={props.language}/>
-        <img src="/nat-cv-2-280.jpg" alt="Natalia Carreño portrait"/>
-        <Introduction language={props.language}/>
-      </main>
+      <section className="main-container">
+        <main className="main-content">
+          <Presentation language={props.language}/>
+          <img src="/nat-cv-2-280.jpg" alt="Natalia Carreño portrait"/>
+          <Introduction language={props.language}/>
+        </main>
+      </section>
     </>
   )
 }

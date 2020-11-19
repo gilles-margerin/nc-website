@@ -9,8 +9,8 @@ function Dropdown(props) {
   }
 
   return(
-    <div id ='lang-btn' className="lang-select btn" onClick={() => handleClick()}>
-      <img src="/translating-test.png" alt=""/>
+    <div id ='lang-btn' className="lang-select" onClick={() => handleClick()}>
+      <img src="/translating64.png" alt=""/>
       <div className="lang-container">
         <Button 
         handleLangSelect={props.handleLangSelect} 
