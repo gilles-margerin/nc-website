@@ -2,6 +2,11 @@
   "id":"es",
   "language": "Español",
   "title": "Natalia Gracia - Início",
+  "pages": [
+    "Início",
+    "Contacto",
+    "Acerca de mí"
+  ],
   "presentation": [
     "¡Bienvenido!",
     "Servicios de traducción",

@@ -2,6 +2,11 @@
   "id":"en",
   "language": "English",
   "title": "Natalia Gracia - Homepage",
+  "pages": [
+    "Home",
+    "Contact",
+    "About me"
+  ],
   "presentation": [
     "Welcome!",
     "Translation services",
@@ -12,7 +17,7 @@
   ],
   "intro": [
     "Looking for fast, qualitative translation?",
-    "I will be happy to help you with yout project!",
+    "I will be happy to help you with your project!",
     "Contact"
   ],
   "contact": [
