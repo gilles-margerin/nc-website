@@ -151,11 +151,14 @@ a {
   margin-bottom: 10px;
 }
 .main-content .presentation.lang-change {
-  animation: container-opacity linear 0.7s;
+  animation: container-opacity linear 1.2s;
 }
 .main-content img {
   border: 1px solid #c50e18;
   border-radius: 50%;
+}
+.main-content img.lang-change {
+  animation: container-opacity linear 1.2s;
 }
 
 .intro {
@@ -185,7 +188,7 @@ a {
   padding: 0 2.5em;
 }
 .intro.lang-change {
-  animation: container-opacity linear 0.5s;
+  animation: container-opacity linear 1.2s;
 }
 
 /*# sourceMappingURL=global.css.map */

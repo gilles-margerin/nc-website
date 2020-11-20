@@ -176,13 +176,17 @@ a {
       margin-bottom: 10px;
     }
     &.lang-change {
-      animation: container-opacity linear 0.7s;
+      animation: container-opacity linear 1.2s;
     }
   }
 
   img {
     border: 1px solid $red;
     border-radius: 50%;
+
+    &.lang-change {
+      animation: container-opacity linear 1.2s;
+    }
   }
 }
 
@@ -214,7 +218,7 @@ a {
   }
 
   &.lang-change {
-    animation: container-opacity linear 0.5s;
+    animation: container-opacity linear 1.2s;
   }
 }
 

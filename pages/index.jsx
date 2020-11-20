@@ -10,19 +10,23 @@ function Home(props) {
   const handleLangSelect = () => {
     const presentation = document.querySelector('.presentation')
     const intro = document.querySelector('.intro')
+    const img = document.querySelector('.main-img')
 
     presentation.classList.add('lang-change')
     intro.classList.add('lang-change')
+    img.classList.add('lang-change')
   }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const presentation = document.querySelector('.presentation')
       const intro = document.querySelector('.intro')
+      const img = document.querySelector('.main-img')
 
       const timer = setTimeout(() => {
         presentation.classList.remove('lang-change')
         intro.classList.remove('lang-change')
+        img.classList.remove('lang-change')
     }, 500)
     return () => clearTimeout(timer)
     }
@@ -38,7 +42,7 @@ function Home(props) {
       <section className="main-container">
         <main className="main-content">
           <Presentation language={props.language}/>
-          <img src="/nat-cv-2-280.jpg" alt="Natalia Carreño portrait"/>
+          <img className='main-img' src="/nat-cv-2-280.jpg" alt="Natalia Carreño portrait"/>
           <Introduction language={props.language}/>
         </main>
       </section>
