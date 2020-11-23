@@ -94,7 +94,6 @@ a {
   @include flex-centering;
   background: $nav-gradient;
   min-height: 55px;
-  
 
   .main-title a {
     color: $white;
@@ -102,16 +101,23 @@ a {
 
   .lang-select {
     @include flex-centering;
-    position: absolute;
-    width: 15%;
-    height: 15%;
+    position: fixed;
     right: 3px;
-    top: 0px;
+    top: 45px;
+
+    @media (min-width: 768px) {
+      right: 45px;
+    }
+    @media (min-width: 992px) {
+      right: 90px;
+    }
+
 
     img {
       border: 2px outset $pink;
       border-radius: 50%;
       background: $white;
+      width: 85%;
     }
 
     &:hover {
@@ -121,8 +127,8 @@ a {
     .lang-container {
       display: none;
       position: absolute;
-      top: 58px;
-      right: -30px;
+      top: 20px;
+      right: -25px;
 
       button {
         border: 1px solid $red;
@@ -139,6 +145,10 @@ a {
         @include flex-centering;
         flex-direction: column;
         animation: top-transition ease-in-out forwards 0.5s;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+        }
       }
     }
   }
@@ -151,15 +161,18 @@ a {
 .main-container {
   height: 94%;
   background-image: url('https://images.unsplash.com/photo-1546521343-4eb2c01aa44b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80'); 
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .main-content {
   @include flex-centering;
-  background: rgba(255,255,255, 0.6);
+  background: rgba(255,255,255, 0.7);
   flex-direction: column;
   justify-content: space-evenly;
   color: $light-purple;
   height: 100%;
+  overflow: hidden;
 
   .presentation {
     width: 80%;
@@ -221,6 +234,12 @@ a {
     animation: container-opacity linear 1.2s;
   }
 }
+/* @media (min-width: 501px) {
+  .nav-container .lang-select {
+    background: red;
+    right: 80px;
+  }
+} */
 
 
 

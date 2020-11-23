@@ -81,16 +81,25 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  width: 15%;
-  height: 15%;
+  position: fixed;
   right: 3px;
-  top: 0px;
+  top: 45px;
+}
+@media (min-width: 768px) {
+  .nav-container .lang-select {
+    right: 45px;
+  }
+}
+@media (min-width: 992px) {
+  .nav-container .lang-select {
+    right: 90px;
+  }
 }
 .nav-container .lang-select img {
   border: 2px outset #e03979;
   border-radius: 50%;
   background: white;
+  width: 85%;
 }
 .nav-container .lang-select:hover {
   cursor: pointer;
@@ -98,8 +107,8 @@ a {
 .nav-container .lang-select .lang-container {
   display: none;
   position: absolute;
-  top: 58px;
-  right: -30px;
+  top: 20px;
+  right: -25px;
 }
 .nav-container .lang-select .lang-container button {
   border: 1px solid #c50e18;
@@ -118,6 +127,11 @@ a {
   flex-direction: column;
   animation: top-transition ease-in-out forwards 0.5s;
 }
+@media (min-width: 768px) {
+  .nav-container .lang-select .lang-container.open {
+    flex-direction: row;
+  }
+}
 
 .menu-container {
   display: none;
@@ -126,17 +140,20 @@ a {
 .main-container {
   height: 94%;
   background-image: url("https://images.unsplash.com/photo-1546521343-4eb2c01aa44b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .main-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   flex-direction: column;
   justify-content: space-evenly;
   color: #5e16af;
   height: 100%;
+  overflow: hidden;
 }
 .main-content .presentation {
   width: 80%;
@@ -190,5 +207,12 @@ a {
 .intro.lang-change {
   animation: container-opacity linear 1.2s;
 }
+
+/* @media (min-width: 501px) {
+  .nav-container .lang-select {
+    background: red;
+    right: 80px;
+  }
+} */
 
 /*# sourceMappingURL=global.css.map */
