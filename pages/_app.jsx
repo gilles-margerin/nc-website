@@ -17,7 +17,8 @@ function App({Component, pageProps}) {
     <Component 
       {...pageProps}
       language={language} 
-      langSelect={langSelect}/>
+      langSelect={langSelect}
+      />
   )
 }
 
