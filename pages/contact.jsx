@@ -40,7 +40,11 @@ function Contact (props) {
         handleLangSelect={handleLangSelect} 
         langSelect={props.langSelect} 
         language={props.language}/>
-      <Form language={props.language}/>
+      <section className="main-container">
+        <main className="main-content">
+          <Form language={props.language}/>
+        </main>
+      </section>
     </>
     
   )

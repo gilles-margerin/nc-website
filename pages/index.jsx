@@ -38,7 +38,10 @@ function Home(props) {
         <title className='page-title'>{props.language.title}</title>
         <script defer src="https://friconix.com/cdn/friconix.js"></script>
       </Head>
-      <Navbar handleLangSelect={handleLangSelect} langSelect={props.langSelect} language={props.language}/>
+      <Navbar 
+        handleLangSelect={handleLangSelect} 
+        langSelect={props.langSelect} 
+        language={props.language}/>
       <section className="main-container">
         <main className="main-content">
           <Presentation language={props.language}/>
