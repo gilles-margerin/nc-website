@@ -7,28 +7,19 @@ function Contact (props) {
   const language = props.language 
 
   const handleLangSelect = () => {
-    /* const presentation = document.querySelector('.presentation')
-    const intro = document.querySelector('.intro')
-    const img = document.querySelector('.main-img')
-
-    presentation.classList.add('lang-change')
-    intro.classList.add('lang-change')
-    img.classList.add('lang-change') */
+    const form = document.querySelector('.contact-form')
+    form.classList.add('lang-change')
   }
 
   useEffect(() => {
-    /* if (typeof window !== 'undefined') {
-      const presentation = document.querySelector('.presentation')
-      const intro = document.querySelector('.intro')
-      const img = document.querySelector('.main-img')
+    if (typeof window !== 'undefined') {
+      const form = document.querySelector('.contact-form')
 
       const timer = setTimeout(() => {
-        presentation.classList.remove('lang-change')
-        intro.classList.remove('lang-change')
-        img.classList.remove('lang-change')
-    }, 500)
-    return () => clearTimeout(timer)
-    } */
+        form.classList.remove('lang-change')
+      }, 500)
+      return () => clearTimeout(timer)
+    }
   },[language])
 
   return(

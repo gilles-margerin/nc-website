@@ -309,6 +309,11 @@ a {
   }
 }
 
+.contact-form {
+  &.lang-change {
+    animation: container-opacity linear 1.2s;
+  }
+}
 
 
 

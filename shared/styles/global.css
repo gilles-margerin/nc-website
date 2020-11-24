@@ -274,4 +274,8 @@ a {
   border-radius: 5px;
 }
 
+.contact-form.lang-change {
+  animation: container-opacity linear 1.2s;
+}
+
 /*# sourceMappingURL=global.css.map */

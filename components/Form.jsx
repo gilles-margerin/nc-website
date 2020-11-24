@@ -44,9 +44,6 @@ function Form(props) {
             name="file"
             id="file"/>
         </section>
-        <div className="file-display">
-          <ul className="file-container"></ul>
-        </div>
         <button 
           className="submit-btn"
           type="submit">{language.contact[5]}</button>
