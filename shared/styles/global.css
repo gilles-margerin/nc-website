@@ -143,11 +143,6 @@ a {
 .main-container {
   height: 910px;
 }
-@media (min-width: 768px) {
-  .main-container {
-    height: 968px;
-  }
-}
 
 .main-content {
   display: flex;
@@ -159,6 +154,9 @@ a {
   color: #5e16af;
   min-height: 100%;
   overflow: hidden;
+}
+.main-content.form-content {
+  justify-content: center;
 }
 .main-content .presentation {
   width: 80%;
@@ -207,7 +205,7 @@ a {
   height: 60px;
   width: 60px;
   margin: 1.5em auto 1em;
-  padding: 0 2.5em;
+  padding: 1.2rem 4rem;
 }
 .intro.lang-change {
   animation: container-opacity linear 1.2s;
@@ -219,9 +217,9 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: flex-start;
   min-height: 600px;
-  margin: 0 auto;
-  padding: 1.5rem 0;
+  margin: 25px auto 0;
 }
 .form-container button {
   display: flex;
@@ -235,8 +233,8 @@ a {
   border: none;
   font-family: cursive;
   font-size: 1.4rem;
-  margin: 1.5em auto 1em;
-  padding: 1rem 1.2rem;
+  margin: 1.3em auto 1em;
+  padding: 1rem 80px;
 }
 .form-container section {
   border-radius: 5px;
@@ -246,37 +244,53 @@ a {
   padding: 0.5rem;
   background: white;
 }
-.form-container section label,
-.form-container section textarea,
-.form-container section input:not([type=file]) {
-  font-family: "Poiret One", cursive;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 25px;
-}
-.form-container section textarea {
-  min-width: 30vw;
-  max-width: 60vw;
-}
 .form-container section label {
   color: #5e16af;
   background: white;
   padding: 0.15rem;
   text-align: center;
+  font-family: "Poiret One", cursive;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 25px;
 }
 .form-container section input {
-  height: 35px;
-  min-width: 30vw;
-  max-width: 60vw;
-  margin: 0.2rem;
+  height: 34px;
+  margin-top: 5px;
+  width: 230px;
 }
-.form-container section input[type=file] {
-  margin: 15px auto;
-  text-align: center;
+@media (min-width: 576px) {
+  .form-container section input {
+    min-width: 30vw;
+  }
 }
-.form-container section input:not([type=file]) {
+.form-container section textarea {
+  margin-top: 5px;
+  width: 230px;
+  height: 250px;
+}
+@media (min-width: 576px) {
+  .form-container section textarea {
+    min-width: 30vw;
+  }
+}
+.form-container section input:not([type=file]),
+.form-container section textarea {
+  font-family: "Poiret One", cursive;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 25px;
   border: 1px solid #4e2174;
   border-radius: 5px;
+}
+.form-container section input[type=file] {
+  display: none;
+}
+.form-container section.file-section {
+  padding: 0.8rem 0;
+  margin-top: 25px;
+  border: 2px solid #5e16af;
+  min-width: 225px;
 }
 
 .contact-form.lang-change {

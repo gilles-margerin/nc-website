@@ -38,7 +38,7 @@ $red:  rgb(197, 14, 24);
 $pink: rgb(224, 57, 121);
 $dark-pink: rgb(75, 12, 36);
 $light-purple: rgb(94, 22, 175);
-$darkest-purple: rgb(78, 33, 116);
+$dark-purple: rgb(78, 33, 116);
 $white: white;
 
 * {
@@ -163,10 +163,6 @@ a {
 
 .main-container {
   height: 910px;
-
-  @media (min-width: 768px) {
-    height: 968px;
-  }
 }
 
 .main-content {
@@ -177,6 +173,10 @@ a {
   color: $light-purple;
   min-height: 100%;
   overflow: hidden;
+
+  &.form-content {
+    justify-content: center;
+  }
 
   .presentation {
     width: 80%;
@@ -231,7 +231,7 @@ a {
     height: 60px;
     width: 60px;
     margin: 1.5em auto 1em;
-    padding: 0 2.5em;
+    padding: 1.2rem 4rem;
   }
 
   &.lang-change {
@@ -245,9 +245,9 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: flex-start;
   min-height: 600px;
-  margin: 0 auto;
-  padding: 1.5rem 0;
+  margin: 25px auto 0;
 
   button {
     @include flex-centering;
@@ -259,9 +259,8 @@ a {
     border: none;
     font-family: cursive;
     font-size: 1.4rem;
-    
-    margin: 1.5em auto 1em;
-    padding: 1rem 1.2rem ;
+    margin: 1.3em auto 1em;
+    padding: 1rem 80px;
   }
 
   section {
@@ -272,43 +271,57 @@ a {
     padding: 0.5rem;
     background: $white;
 
-    label,
-    textarea,
-    input:not([type=file])
+    label
     {
+      color: $light-purple;
+      background: $white;
+      padding: 0.15rem;
+      text-align: center;
       font-family: "Poiret One", cursive;
       font-size: 1.6rem;
       font-weight: 500;
       line-height: 25px;
     }
 
-    textarea {
-      min-width: 30vw;
-      max-width: 60vw;
-    }
-
-    label {
-      color: $light-purple;
-      background: $white;
-      padding: 0.15rem;
-      text-align: center;
-    }
-
     input {
-      height: 35px;
-      min-width: 30vw;
-      max-width: 60vw;
-      margin: 0.2rem;
+      height: 34px;
+      margin-top: 5px;
+      width: 230px;
 
-      &[type=file] {
-        margin: 15px auto;
-        text-align: center;
+      @media (min-width: 576px) {
+        min-width: 30vw;
       }
+    }
 
-      &:not([type=file]) {
-        border: 1px solid $darkest-purple;
-        border-radius: 5px;
+    textarea {
+      margin-top: 5px;
+      width: 230px;
+      height: 250px;
+
+      @media (min-width: 576px) {
+        min-width: 30vw;
       }
+    }
+
+    input:not([type=file]),
+    textarea {
+      font-family: "Poiret One", cursive;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 25px;
+      border: 1px solid $dark-purple;
+      border-radius: 5px;
+    }
+
+    input[type=file] {
+      display: none;
+    }
+
+    &.file-section {
+      padding: 0.8rem 0;
+      margin-top: 25px;
+      border: 2px solid $light-purple;
+      min-width: 225px;
     }
   }
 }

@@ -1,5 +1,10 @@
 function Form(props) {
   const language = props.language
+  const fileList = document.querySelector('.file-list-container')
+
+  const handleFiles = () => {
+
+  }
   return(
     <form action="post" className="contact-form">
       <fieldset className="form-container">
@@ -33,16 +38,19 @@ function Form(props) {
           <textarea 
             name="content"
             id="content" 
-            cols="25" 
-            rows="8" 
+             
             required></textarea>
         </section>
-        <section>
-          <label htmlFor="file">{language.contact[4]}</label>
+        <section className="file-section">
+          <label id="test" htmlFor="file">{language.contact[4]}</label>
           <input 
             type="file"
             name="file"
-            id="file"/>
+            id="file"
+            multiple/>
+          <div class="file-display">
+            <ul class='file-list-container'></ul>
+          </div>  
         </section>
         <button 
           className="submit-btn"

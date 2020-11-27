@@ -32,7 +32,7 @@ function Contact (props) {
         langSelect={props.langSelect} 
         language={props.language}/>
       <section className="main-container">
-        <main className="main-content">
+        <main className="main-content form-content">
           <Form language={props.language}/>
         </main>
       </section>
