@@ -6,31 +6,22 @@ import Introduction from '../components/Introduction'
 
 function Home(props) {
   const language = props.language 
-
   const getPresentation = () => document.querySelector('.presentation')
-
+  const getIntro = () => document.querySelector('.intro')
+  const getImg = () => document.querySelector('.main-img')
+ 
   const handleLangSelect = () => {
-    // const presentation = document.querySelector('.presentation')
-    const intro = document.querySelector('.intro')
-    const img = document.querySelector('.main-img')
-
     getPresentation().classList.add('lang-change')
-    intro.classList.add('lang-change')
-    img.classList.add('lang-change')
+    getIntro().classList.add('lang-change')
+    getImg().classList.add('lang-change')
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const intro = document.querySelector('.intro')
-      const img = document.querySelector('.main-img')
-
+    if (typeof window !== 'undefined') {      
       const timer = setTimeout(() => {
         getPresentation().classList.remove('lang-change')
-        console.log('🎅🏻')
-
-        /* presentation.classList.remove('lang-change') */
-        intro.classList.remove('lang-change')
-        img.classList.remove('lang-change')
+        getIntro().classList.remove('lang-change')
+        getImg().classList.remove('lang-change')
     }, 500)
     return () => clearTimeout(timer)
     }

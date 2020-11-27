@@ -68,8 +68,8 @@ function Form(props) {
             multiple
             onChange={handleFiles}/> 
         </section>
-        <div class="file-display">
-            <ul class='file-list-container'></ul>
+        <div className="file-display">
+            <ul className='file-list-container'></ul>
         </div> 
         <button 
           className="submit-btn"
