@@ -64,7 +64,10 @@ a {
 }
 
 #__next {
-  height: 100vh;
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1546521343-4eb2c01aa44b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  background-repeat: no-repeat;
+  background-position: center bottom;
 }
 
 .nav-container {
@@ -138,10 +141,12 @@ a {
 }
 
 .main-container {
-  height: 94%;
-  background-image: url("https://images.unsplash.com/photo-1546521343-4eb2c01aa44b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 910px;
+}
+@media (min-width: 768px) {
+  .main-container {
+    height: 968px;
+  }
 }
 
 .main-content {
@@ -152,7 +157,7 @@ a {
   flex-direction: column;
   justify-content: space-evenly;
   color: #5e16af;
-  height: 100%;
+  min-height: 100%;
   overflow: hidden;
 }
 .main-content .presentation {
@@ -179,7 +184,7 @@ a {
 }
 
 .intro {
-  width: 80%;
+  max-width: 600px;
 }
 .intro p {
   font-size: 1.8rem;
@@ -214,8 +219,8 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  margin: 120px auto;
+  min-height: 600px;
+  margin: 0 auto;
   padding: 1.5rem 0;
 }
 .form-container button {
