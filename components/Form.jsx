@@ -1,10 +1,5 @@
 function Form(props) {
   const language = props.language
-  const fileList = document.querySelector('.file-list-container')
-
-  const handleFiles = () => {
-
-  }
   return(
     <form action="post" className="contact-form">
       <fieldset className="form-container">
