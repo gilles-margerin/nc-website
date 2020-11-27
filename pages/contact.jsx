@@ -5,18 +5,16 @@ import Form from '../components/Form'
 
 function Contact (props) {
   const language = props.language 
+  const getForm = () => document.querySelector('.contact-form')
 
   const handleLangSelect = () => {
-    const form = document.querySelector('.contact-form')
-    form.classList.add('lang-change')
+    getForm().classList.add('lang-change')
   }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const form = document.querySelector('.contact-form')
-
       const timer = setTimeout(() => {
-        form.classList.remove('lang-change')
+       getForm().classList.remove('lang-change')
       }, 500)
       return () => clearTimeout(timer)
     }

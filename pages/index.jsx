@@ -6,22 +6,25 @@ import Introduction from '../components/Introduction'
 
 function Home(props) {
   const language = props.language 
-  const getPresentation = () => document.querySelector('.presentation')
-  const getIntro = () => document.querySelector('.intro')
-  const getImg = () => document.querySelector('.main-img')
+ 
+  const getElements = {
+    getPresentation: () => document.querySelector('.presentation'),
+    getIntro: () => document.querySelector('.intro'),
+    getImg: () => document.querySelector('.main-img') 
+  }
  
   const handleLangSelect = () => {
-    getPresentation().classList.add('lang-change')
-    getIntro().classList.add('lang-change')
-    getImg().classList.add('lang-change')
+    for (let getFunc in getElements) {
+      getElements[getFunc]().classList.add('lang-change')
+    }
   }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {      
       const timer = setTimeout(() => {
-        getPresentation().classList.remove('lang-change')
-        getIntro().classList.remove('lang-change')
-        getImg().classList.remove('lang-change')
+        for (let getFunc in getElements) {
+          getElements[getFunc]().classList.remove('lang-change')
+        }
     }, 500)
     return () => clearTimeout(timer)
     }
