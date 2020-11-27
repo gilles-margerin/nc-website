@@ -1,5 +1,28 @@
 function Form(props) {
   const language = props.language
+
+  const handleFiles = () => {
+    const fileInput = document.querySelector('#file')
+    const fileList = document.querySelector('.file-list-container')
+    const files = Array.from(fileInput.files)
+
+    for (let file of files) {
+      const div = document.createElement('div')
+      const description = document.createElement('p')
+      const element = document.createElement("li");
+      const elementButton = document.createElement("button");
+
+      div.classList.add('ul-file-wrapper')
+      description.textContent = file.name
+      element.id = `file-${Date.now()}`
+      elementButton.classList.add('remove-btn')
+      elementButton.id = `btn-${element.id}`
+
+      fileList.append(div)
+      div.append(description, element, elementButton)
+    }
+  }
+
   return(
     <form action="post" className="contact-form">
       <fieldset className="form-container">
@@ -42,11 +65,12 @@ function Form(props) {
             type="file"
             name="file"
             id="file"
-            multiple/>
-          <div class="file-display">
-            <ul class='file-list-container'></ul>
-          </div>  
+            multiple
+            onChange={handleFiles}/> 
         </section>
+        <div class="file-display">
+            <ul class='file-list-container'></ul>
+        </div> 
         <button 
           className="submit-btn"
           type="submit">{language.contact[5]}</button>

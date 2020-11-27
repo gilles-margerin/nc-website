@@ -20,8 +20,8 @@ function Navbar(props) {
           </Link>  
         </h1> 
       </div>
-      <Dropdown 
-        handleLangSelect={props.handleLangSelect} 
+      <Dropdown
+        handleLangSelect={props.handleLangSelect}
         language={props.language} 
         langSelect={props.langSelect}
       />

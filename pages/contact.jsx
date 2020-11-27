@@ -25,7 +25,7 @@ function Contact (props) {
   return(
     <>
       <Head>
-      <title className='page-title'>{props.language.title}</title>
+        <title className='page-title'>{props.language.title}</title>
       </Head>
       <Navbar 
         handleLangSelect={handleLangSelect} 

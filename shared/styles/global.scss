@@ -261,6 +261,11 @@ a {
     font-size: 1.4rem;
     margin: 1.3em auto 1em;
     padding: 1rem 80px;
+
+    &.remove-btn {
+      width: 25px;
+      padding: 1rem;
+    }
   }
 
   section {
@@ -326,12 +331,20 @@ a {
   }
 }
 
+.file-list-container {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    list-style: none;
+  }
+}
+
 .contact-form {
   &.lang-change {
     animation: container-opacity linear 1.2s;
   }
 }
-
 
 
 

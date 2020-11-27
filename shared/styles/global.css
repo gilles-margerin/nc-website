@@ -236,6 +236,10 @@ a {
   margin: 1.3em auto 1em;
   padding: 1rem 80px;
 }
+.form-container button.remove-btn {
+  width: 25px;
+  padding: 1rem;
+}
 .form-container section {
   border-radius: 5px;
   display: inherit;
@@ -291,6 +295,14 @@ a {
   margin-top: 25px;
   border: 2px solid #5e16af;
   min-width: 225px;
+}
+
+.file-list-container {
+  display: flex;
+  flex-direction: column;
+}
+.file-list-container li {
+  list-style: none;
 }
 
 .contact-form.lang-change {

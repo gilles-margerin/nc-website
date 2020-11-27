@@ -14,22 +14,22 @@ function Dropdown(props) {
       <div className="lang-container">
         <Button 
         handleLangSelect={props.handleLangSelect} 
-        langSelect={props.langSelect} 
-        id="en-btn" 
+        langSelect={() => props.langSelect('en')} 
+       /*  id="en-btn"  */
         value="English"
         />
 
         <Button 
         handleLangSelect={props.handleLangSelect} 
-        langSelect={props.langSelect} 
-        id="es-btn" 
+        langSelect={() => props.langSelect('es')} 
+       /*  id="es-btn"  */
         value="Español"
         />
 
         <Button 
         handleLangSelect={props.handleLangSelect} 
-        langSelect={props.langSelect} 
-        id="pt-btn" 
+        langSelect={() => props.langSelect('pt')} 
+        /* id="pt-btn"  */
         value="Português"
         />
       </div>
