@@ -64,7 +64,7 @@ p {
 
 h1 {
   font-family: "Special Elite", cursive;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 
 h2,
@@ -98,10 +98,13 @@ a {
   background: $nav-gradient;
   min-height: 55px;
 
-  .main-title a {
-    color: $white;
+  .main-title {
+    padding: 0.4rem 0 0.1rem;
+    
+    a {
+      color: $white;
+    }
   }
-
   .lang-select {
     @include flex-centering;
     position: fixed;
@@ -259,12 +262,21 @@ a {
     border: none;
     font-family: cursive;
     font-size: 1.4rem;
-    margin: 1.3em auto 1em;
+    margin: 1.1em auto 1em;
     padding: 1rem 80px;
+    min-width: 225px;
 
     &.remove-btn {
-      width: 25px;
-      padding: 1rem;
+      padding: 0;
+      min-width: 20px;
+      height: 20px;
+      margin: 0;
+
+     &::after {
+       content: 'x';
+       position: relative;
+       top: -9px;
+     }
     }
   }
 
@@ -323,17 +335,42 @@ a {
     }
 
     &.file-section {
-      padding: 0.8rem 0;
       margin-top: 25px;
       border: 2px solid $light-purple;
       min-width: 225px;
+      padding: 0;
+
+      label {
+        @include flex-centering();
+        height: 58px;
+        width: 100%;
+        padding: 0;
+      }
+
+      :hover {
+        cursor: pointer;
+      }
+
     }
   }
 }
 
 .file-list-container {
+  max-height: 80px;
+  overflow-y: scroll;
+
+}
+
+.ul-file-wrapper {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  background: $white;
+  padding: 0.4rem 0.6rem;
+   
+  p {
+    font-size: 1.2rem;
+    margin-right: 8px;
+  }
 
   li {
     list-style: none;

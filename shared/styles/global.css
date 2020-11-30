@@ -40,7 +40,7 @@ p {
 
 h1 {
   font-family: "Special Elite", cursive;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 
 h2,
@@ -76,6 +76,9 @@ a {
   justify-content: center;
   background: linear-gradient(315deg, #42378f 0%, #d33842 74%);
   min-height: 55px;
+}
+.nav-container .main-title {
+  padding: 0.4rem 0 0.1rem;
 }
 .nav-container .main-title a {
   color: white;
@@ -233,12 +236,20 @@ a {
   border: none;
   font-family: cursive;
   font-size: 1.4rem;
-  margin: 1.3em auto 1em;
+  margin: 1.1em auto 1em;
   padding: 1rem 80px;
+  min-width: 225px;
 }
 .form-container button.remove-btn {
-  width: 25px;
-  padding: 1rem;
+  padding: 0;
+  min-width: 20px;
+  height: 20px;
+  margin: 0;
+}
+.form-container button.remove-btn::after {
+  content: "x";
+  position: relative;
+  top: -9px;
 }
 .form-container section {
   border-radius: 5px;
@@ -291,17 +302,39 @@ a {
   display: none;
 }
 .form-container section.file-section {
-  padding: 0.8rem 0;
   margin-top: 25px;
   border: 2px solid #5e16af;
   min-width: 225px;
+  padding: 0;
+}
+.form-container section.file-section label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  width: 100%;
+  padding: 0;
+}
+.form-container section.file-section :hover {
+  cursor: pointer;
 }
 
 .file-list-container {
-  display: flex;
-  flex-direction: column;
+  max-height: 80px;
+  overflow-y: scroll;
 }
-.file-list-container li {
+
+.ul-file-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  background: white;
+  padding: 0.4rem 0.6rem;
+}
+.ul-file-wrapper p {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+.ul-file-wrapper li {
   list-style: none;
 }
 

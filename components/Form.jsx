@@ -2,11 +2,31 @@ function Form(props) {
   const language = props.language
 
   const handleFiles = () => {
-    const fileInput = document.querySelector('#file')
-    const fileList = document.querySelector('.file-list-container')
-    const files = Array.from(fileInput.files)
+    const fileInput = document.querySelector('#file');
+    const fileList = document.querySelector('.file-list-container');
+    const authorizedFiles = [
+      "text/plain",
+      "application/rtf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/pdf",
+      "application/vnd.oasis.opendocument.text",
+      "application/vnd.oasis.opendocument.presentation"
+    ]
+    
+    if (fileInput.files.length > 5) {
+      fileInput.value = '';
+      return alert('Too many files')
+    };
 
-    for (let file of files) {
+    for (file of fileInput.files) {
+      !authorizedFiles.find(elem => elem === file.type) && function() {
+        fileInput.value='';
+        return alert('Wrong file type');
+      }()
+    }
+    
+    for (file of fileInput.files) {
       const div = document.createElement('div')
       const description = document.createElement('p')
       const element = document.createElement("li");
@@ -20,7 +40,7 @@ function Form(props) {
 
       fileList.append(div)
       div.append(description, element, elementButton)
-    }
+    };
   }
 
   return(
@@ -66,7 +86,8 @@ function Form(props) {
             name="file"
             id="file"
             multiple
-            onChange={handleFiles}/> 
+            onChange={handleFiles}
+            accept=".txt,.rtf,.doc,.docx,.pdf,.odt,.odp"/> 
         </section>
         <div className="file-display">
             <ul className='file-list-container'></ul>

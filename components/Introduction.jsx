@@ -6,7 +6,7 @@ function Introduction(props) {
         <p>{props.language.intro[0]}</p>
         <p>{props.language.intro[1]}</p>
         <Link href="/contact">
-          <a className="contact-btn" type='button'>{props.language.intro[2]}</a>
+          <a className="contact-btn">{props.language.intro[2]}</a>
         </Link>
     </div>
   )
