@@ -1,9 +1,24 @@
 function Form(props) {
   const language = props.language
+  const fileInput = typeof window !== 'undefined' ? document.querySelector('#file') : null
+  const fileList = typeof window !== 'undefined' ? document.querySelector('.file-list-container'): null
+  let userFiles = []
 
-  const handleFiles = () => {
-    const fileInput = document.querySelector('#file');
-    const fileList = document.querySelector('.file-list-container');
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let formData = new FormData()
+    
+    for (let i = 0; i < userFiles.length; i++) {
+      formData.append(`file-${i}`, userFiles[i])
+    }
+    
+    await fetch('http://localhost:3000/contact', {
+      method: 'POST',
+      body: formData
+    })
+  }
+
+  const fileCheck = () => {
     const authorizedFiles = [
       "text/plain",
       "application/rtf",
@@ -17,7 +32,7 @@ function Form(props) {
     if (fileInput.files.length > 5) {
       fileInput.value = '';
       return alert('Too many files')
-    };
+    } 
 
     for (file of fileInput.files) {
       !authorizedFiles.find(elem => elem === file.type) && function() {
@@ -25,26 +40,49 @@ function Form(props) {
         return alert('Wrong file type');
       }()
     }
-    
-    for (file of fileInput.files) {
+  }
+
+  const handleFiles = () => {
+    if (userFiles.length >= 5) {
+      return alert('Too many files')
+    } else {
+      userFiles = userFiles.concat(Array.from(fileInput.files))
+    }
+
+    fileCheck()
+
+    for (let i = 0; i < userFiles.length; i++) {
       const div = document.createElement('div')
       const description = document.createElement('p')
-      const element = document.createElement("li");
+      const singleFile = document.createElement("li");
       const elementButton = document.createElement("button");
 
       div.classList.add('ul-file-wrapper')
-      description.textContent = file.name
-      element.id = `file-${Date.now()}`
+      description.textContent = userFiles[i].name
+      singleFile.id = `file-${i}`
       elementButton.classList.add('remove-btn')
-      elementButton.id = `btn-${element.id}`
+      elementButton.id = `btn-${i}`
+      elementButton.type = "button"
+      elementButton.addEventListener('click', (e) => {
+        const target = e.target.id
+        const parentTarget = e.target.closest('div')
+        userFiles.splice(target, 1)
+        parentTarget.remove()
+      })
 
       fileList.append(div)
-      div.append(description, element, elementButton)
+      div.append(description, singleFile, elementButton)
     };
   }
 
   return(
-    <form action="post" className="contact-form">
+    <form 
+      action=""
+      id="contact-data" 
+      className="contact-form"
+      method="post"
+      encType="multipart/form-data"
+      onSubmit={handleSubmit}>
       <fieldset className="form-container">
         <section>
           <label htmlFor="name">{language.contact[0]}</label>
