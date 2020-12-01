@@ -33,6 +33,7 @@ $nav-gradient: linear-gradient(315deg, #42378f 0%, #d33842 74%);
 
 $dark-blue: rgba( 12, 67,134,1);
 $darkest-blue:  rgba(  1, 32, 45,1);
+$gray: rgb(189, 184, 184);
 $pale-red: rgb(192, 115, 115);
 $red:  rgb(197, 14, 24);
 $pink: rgb(224, 57, 121);
@@ -271,6 +272,8 @@ a {
       min-width: 20px;
       height: 20px;
       margin: 0;
+      position: relative;
+      top: 2.5px;
 
      &::after {
        content: 'x';
@@ -357,15 +360,18 @@ a {
 
 .file-list-container {
   max-height: 80px;
+  max-width: 225px;
   overflow-y: scroll;
-
+  overflow-x: visible;
 }
 
 .ul-file-wrapper {
   display: flex;
   justify-content: flex-end;
   background: $white;
-  padding: 0.4rem 0.6rem;
+  padding: 0.2rem;
+  border: 1px solid $gray;
+  margin-bottom: 0.4px;
    
   p {
     font-size: 1.2rem;

@@ -245,6 +245,8 @@ a {
   min-width: 20px;
   height: 20px;
   margin: 0;
+  position: relative;
+  top: 2.5px;
 }
 .form-container button.remove-btn::after {
   content: "x";
@@ -321,14 +323,18 @@ a {
 
 .file-list-container {
   max-height: 80px;
+  max-width: 225px;
   overflow-y: scroll;
+  overflow-x: visible;
 }
 
 .ul-file-wrapper {
   display: flex;
   justify-content: flex-end;
   background: white;
-  padding: 0.4rem 0.6rem;
+  padding: 0.2rem;
+  border: 1px solid #bdb8b8;
+  margin-bottom: 0.4px;
 }
 .ul-file-wrapper p {
   font-size: 1.2rem;
