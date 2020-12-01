@@ -1,7 +1,7 @@
 function Form(props) {
   const language = props.language
-  const fileInput = typeof window !== 'undefined' ? document.querySelector('#file') : null
-  const fileList = typeof window !== 'undefined' ? document.querySelector('.file-list-container'): null
+  const fileInput = () => document.querySelector('#file') 
+  const fileList = () => document.querySelector('.file-list-container')
   let userFiles = []
 
   const handleSubmit = async (e) => {
@@ -29,14 +29,14 @@ function Form(props) {
       "application/vnd.oasis.opendocument.presentation"
     ]
     
-    if (fileInput.files.length > 5) {
-      fileInput.value = '';
+    if (fileInput().files.length > 5) {
+      fileInput().value = '';
       return alert('Too many files')
     } 
 
-    for (file of fileInput.files) {
+    for (file of fileInput().files) {
       !authorizedFiles.find(elem => elem === file.type) && function() {
-        fileInput.value='';
+        fileInput().value='';
         return alert('Wrong file type');
       }()
     }
@@ -46,7 +46,7 @@ function Form(props) {
     if (userFiles.length >= 5) {
       return alert('Too many files')
     } else {
-      userFiles = userFiles.concat(Array.from(fileInput.files))
+      userFiles = userFiles.concat(Array.from(fileInput().files))
     }
 
     fileCheck()
@@ -70,7 +70,7 @@ function Form(props) {
         parentTarget.remove()
       })
 
-      fileList.append(div)
+      fileList().append(div)
       div.append(description, singleFile, elementButton)
     };
   }
