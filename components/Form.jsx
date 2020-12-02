@@ -43,22 +43,23 @@ function Form(props) {
   }
 
   const handleFiles = () => {
-    if (userFiles.length >= 5) {
+    if (userFiles.length + fileInput().files.length > 5) {
       return alert('Too many files')
     } else {
-      userFiles = userFiles.concat(Array.from(fileInput().files))
+      userFiles.push(...Array.from(fileInput().files))
     }
 
     fileCheck()
 
-    for (let i = 0; i < userFiles.length; i++) {
+    for (let i = 0, j = fileInput().files.length; i < j; i++) {
+      const file = fileInput().files[i]
       const div = document.createElement('div')
       const description = document.createElement('p')
       const singleFile = document.createElement("li");
       const elementButton = document.createElement("button");
 
       div.classList.add('ul-file-wrapper')
-      description.textContent = userFiles[i].name
+      description.textContent = file.name
       singleFile.id = `file-${i}`
       elementButton.classList.add('remove-btn')
       elementButton.id = `btn-${i}`
