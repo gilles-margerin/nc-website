@@ -6,7 +6,12 @@ function Form(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    let formData = new FormData()
+    const formData = new FormData()
+    const initialForm = document.querySelector('#contact-data')
+
+    for (let i = 1; i < 5; i++) {
+      formData.append(`${initialForm.elements[i].name}`, `${initialForm.elements[i].value}`)
+    }
     
     for (let i = 0; i < userFiles.length; i++) {
       formData.append(`file-${i}`, userFiles[i])
@@ -16,6 +21,10 @@ function Form(props) {
       method: 'POST',
       body: formData
     })
+    
+    initialForm.reset()
+    fileList().innerHTML = ''
+    userFiles.length = 0
   }
 
   const fileCheck = () => {
