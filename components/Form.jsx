@@ -24,20 +24,20 @@ function Form(props) {
     if (userFiles.length + fileInput().files.length > 5) {
       fileInput().value='';
       fileChecks.list = false
-      return alert('Too many files, please upload a maximum of 5 files.')
+      return alert(`${language.alerts[0]}`)
     }
 
     for (file of fileInput().files) {
       if (file.size > 1048576) {
         fileInput().value='';
         fileChecks.size = false
-        return alert(`File ${file.name} is too big, file size must be below 10Mb.`)
+        return alert(`${file.name}${language.alerts[1]}`)
       }
 
       !authorizedFiles.find(typeCheck => typeCheck === file.type) && function() {
         fileInput().value='';
         fileChecks.type = false
-        return alert('Wrong file type, please upload one of the following file type: .txt, .rtf, .doc, .docx, .pdf, .odt,.odp');
+        return alert(`${language.alerts[0]}`);
       }()
     }
     

@@ -27,5 +27,10 @@
     "Sua mensagem",
     "Anexar arquivo",
     "Enviar"
+  ],
+  "alerts": [
+    "Demasiados arquivos, por favor anexar no máximo 5 arquivos.",
+    " arquivo é muito grande, o seu tamanho deve ser inferior a 10Mb.",
+    "Tipo de arquivo errado, por favor anexar em qualquer dos seguintes formatos: .doc, .docx, .odp, .odt, .pdf, .rtf, .txt."
   ]
 }
