@@ -20,7 +20,7 @@ function Form(props) {
       "application/vnd.oasis.opendocument.text",
       "application/vnd.oasis.opendocument.presentation"
     ]
-
+    
     if (userFiles.length + fileInput().files.length > 5) {
       fileInput().value='';
       fileChecks.list = false
@@ -42,6 +42,8 @@ function Form(props) {
     }
     
     if (!fileChecks.type  || !fileChecks.size || !fileChecks.list) return
+
+    userFiles.push(...Array.from(fileInput().files))
 
     for (let i = 0, j = fileInput().files.length; i < j; i++) {
       const file = fileInput().files[i]
