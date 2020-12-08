@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import Presentation from '../components/Presentation'
 import Introduction from '../components/Introduction'
@@ -13,14 +13,16 @@ function Home(props) {
     getImg: () => document.querySelector('.main-img') 
   }
  
-  const handleLangSelect = () => {
+  const handleLangSelect = (e) => {
+    if (e.target.id === language.id) return
+    
     for (let getFunc in getElements) {
       getElements[getFunc]().classList.add('lang-change')
     }
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {      
+    if (typeof window !== 'undefined') {    
       const timer = setTimeout(() => {
         for (let getFunc in getElements) {
           getElements[getFunc]().classList.remove('lang-change')
@@ -34,7 +36,6 @@ function Home(props) {
     <>
       <Head>
         <title className='page-title'>{props.language.title}</title>
-        <script defer src="https://friconix.com/cdn/friconix.js"></script>
       </Head>
       <Navbar 
         handleLangSelect={handleLangSelect} 

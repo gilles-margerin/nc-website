@@ -1,5 +1,5 @@
-import {useEffect, useState}  from 'react'
-import '../shared/styles/global.css'
+import {useState}  from 'react'
+import '../shared/styles/rewrite.css'
 import enTranslations from '../shared/translations/en.json'
 import esTranslations from '../shared/translations/es.json'
 import ptTranslations from '../shared/translations/pt.json'

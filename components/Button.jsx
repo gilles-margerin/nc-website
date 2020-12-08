@@ -4,7 +4,7 @@ function Button(props) {
       id={props.id} 
       onClick={(e) => {
         props.langSelect(e);
-        props.handleLangSelect()
+        props.handleLangSelect(e)
       }}>
         {props.value}
     </button>
