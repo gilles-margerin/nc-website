@@ -1,6 +1,7 @@
 function Button(props) {
   return(
-    <button 
+    <button
+      className="lang-btn" 
       id={props.id} 
       onClick={(e) => {
         props.langSelect(e);

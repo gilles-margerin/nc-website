@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 function Form(props) {
   const language = props.language
   const fileInput = () => document.querySelector('#file') 
@@ -136,7 +138,7 @@ function Form(props) {
             required></textarea>
         </section>
         <section className="file-section">
-          <label id="test" htmlFor="file">{language.contact[4]}</label>
+          <label id="file-uploader" htmlFor="file">{language.contact[4]}</label>
           <input 
             type="file"
             name="file"
@@ -146,7 +148,8 @@ function Form(props) {
             accept=".txt,.rtf,.doc,.docx,.pdf,.odt,.odp"/> 
         </section>
         <div className="file-display">
-            <ul className='file-list-container'></ul>
+            <ul className='file-list-container'>
+            </ul>
         </div> 
         <button 
           className="submit-btn"

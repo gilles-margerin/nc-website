@@ -1,6 +1,4 @@
-/*font-family: 'Lato', sans-serif;*/
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap");
-/*font-family: 'Libre Franklin', sans-serif;*/
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap");
 @keyframes lang-btn-opa-in {
   from {
@@ -36,12 +34,16 @@
   padding: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Lato", sans-serif;
   text-align: center;
 }
 
-p {
+p,
+label,
+input,
+textarea {
   font-family: "Libre Franklin", sans-serif;
   text-align: center;
 }
@@ -70,7 +72,7 @@ p {
 .menu-container a {
   color: #fff;
   font-family: "Libre Franklin", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
   margin: 0 35px;
@@ -81,7 +83,7 @@ p {
 }
 .banner a {
   color: #fff;
-  font-size: 2.45rem;
+  font-size: 2.5rem;
   text-decoration: none;
   font-weight: 300;
   letter-spacing: 1px;
@@ -106,7 +108,7 @@ p {
 }
 .lang-select img {
   position: absolute;
-  top: -2px;
+  top: -1px;
   right: 25px;
   background: #fff;
   border-radius: 50%;
@@ -128,16 +130,16 @@ p {
   margin: 0 0.3rem;
 }
 .lang-container.open {
-  position: absolute;
-  top: 7px;
-  right: 80px;
+  position: relative;
+  top: 1.5px;
+  right: 15px;
   opacity: 1;
   animation: lang-btn-opa-in 0.7s ease forwards;
 }
 .lang-container.close {
-  position: absolute;
+  position: relative;
   top: -5px;
-  right: 80px;
+  right: 15px;
   opacity: 0;
   animation: lang-btn-opa-out 1s ease-out forwards;
 }
@@ -171,13 +173,13 @@ p {
 .main-content p {
   font-size: 1.55rem;
 }
-.main-content p:not(.intro-paragraph)::before {
+.main-content p.presentation-paragraph:not(.intro-paragraph)::before {
   content: "# ";
 }
-.main-content p:first-of-type:not(.intro-paragraph) {
+.main-content p.presentation-paragraph:first-of-type:not(.intro-paragraph) {
   margin-top: 15px;
 }
-.main-content p:last-of-type:not(.presentation-paragraph) {
+.main-content p.intro-paragraph:last-of-type:not(.presentation-paragraph) {
   margin-bottom: 90px;
 }
 .main-content .main-img {
@@ -186,11 +188,149 @@ p {
   margin: 90px 0 110px 0;
 }
 
-.form-container section {
+.form-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border: none;
+  min-height: 600px;
+  margin: auto 0;
+}
+
+.form-container section:not(.file-section) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+.form-container section:not(.file-section) label {
+  background: #fff;
+  padding: 0.15rem;
+  font-size: 1.25rem;
+  line-height: 25px;
+}
+.form-container section:not(.file-section) input {
+  font-size: 1rem;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px outset #cfadd6;
+  height: 34px;
+  margin-top: 5px;
+  width: 240px;
+}
+@media (min-width: 576px) {
+  .form-container section:not(.file-section) input {
+    min-width: 20vw;
+  }
+}
+
+textarea {
+  font-size: 1rem;
+  text-align: left;
+  margin-top: 5px;
+  width: 238px;
+  height: 250px;
+  border-radius: 5px;
+  border: 1px groove #cfadd6;
+}
+@media (min-width: 576px) {
+  textarea {
+    min-width: 20vw;
+  }
+}
+
+.file-section {
+  margin-top: 25px;
+  border: 2px solid #cfadd6;
+  border-radius: 5px;
+  min-width: 140px;
+  padding: 0;
+}
+.file-section label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 58px;
+  width: 100%;
+  padding: 0;
+}
+.file-section :hover {
+  cursor: pointer;
+}
+
+.file-list-container {
+  min-height: 67px;
+  max-height: 67px;
+  min-width: 238px;
+  max-width: 238px;
+  overflow-y: scroll;
+  overflow-x: visible;
+  margin: 10px 0 5px;
+}
+.file-list-container .ul-file-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  background: #fff;
+  padding: 0.2rem;
+  border: 1px solid #e0e0e0e0;
+  margin-bottom: 0.6px;
+}
+.file-list-container .ul-file-wrapper p {
+  font-size: 0.9rem;
+  margin-right: 8px;
+  padding: 0.2rem;
+}
+.file-list-container .ul-file-wrapper li {
+  list-style: none;
+}
+.file-list-container:empty {
+  overflow: hidden;
+}
+
+button:not(.lang-btn) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: block;
+  background-color: #f8ceec;
+  background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.25rem;
+  margin: 1.5rem auto;
+  padding: 1.2rem 0;
+  width: 139px;
+}
+button:not(.lang-btn):hover {
+  cursor: pointer;
+}
+button:not(.lang-btn).remove-btn {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  top: 2.5px;
+}
+button:not(.lang-btn).remove-btn::after {
+  content: "x";
+  position: relative;
+  top: -4px;
+}
+
+input[type=file] {
+  display: none;
+}
+
+.contact-form.lang-change {
+  animation: container-opacity linear 0.6s;
 }
 
 /*# sourceMappingURL=rewrite.css.map */
