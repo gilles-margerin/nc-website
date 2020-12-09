@@ -51,10 +51,14 @@ textarea {
 #__next {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80");
   background-repeat: no-repeat;
-  background-position: center bottom;
-  min-height: 100vh;
+  background-position: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .nav-container {
@@ -242,12 +246,12 @@ textarea {
 }
 
 .main-container {
-  background: rgba(255, 255, 255, 0.97);
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .main-content {
@@ -255,6 +259,7 @@ textarea {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  justify-content: center;
   color: #6103b9;
   height: 100%;
 }
@@ -262,27 +267,38 @@ textarea {
 .main-content .intro.lang-change {
   animation: container-opacity linear 0.6s;
 }
+.main-content .presentation {
+  margin-top: 5px;
+}
+@media (max-height: 900px) {
+  .main-content .presentation {
+    margin-top: 40px;
+  }
+}
 .main-content h2 {
   font-weight: 100;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-style: italic;
 }
 .main-content p {
-  font-size: 1.55rem;
+  font-size: 1.4rem;
 }
 .main-content p.presentation-paragraph:not(.intro-paragraph)::before {
   content: "# ";
 }
-.main-content p.presentation-paragraph:first-of-type:not(.intro-paragraph) {
-  margin-top: 15px;
+.main-content p.presentation-paragraph:last-of-type:not(.intro-paragraph) {
+  margin-bottom: 35px;
+}
+.main-content p.intro-paragraph:first-of-type:not(.presentation-paragraph) {
+  margin-top: 90px;
 }
 .main-content p.intro-paragraph:last-of-type:not(.presentation-paragraph) {
-  margin-bottom: 90px;
+  margin-bottom: 120px;
 }
 .main-content .main-img {
   border-radius: 50%;
   border: 2px groove #c00b14;
-  margin: 90px 0 110px 0;
+  margin-top: 40px;
 }
 
 .form-container {
