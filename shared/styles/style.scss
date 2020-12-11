@@ -71,13 +71,6 @@ textarea {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80'); 
-  background-repeat: no-repeat;
-  background-position: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
 }
 
 .nav-container {
@@ -263,12 +256,25 @@ textarea {
 .main-container {
   flex-grow: 1;
   @include flex-centering();
+  background: url('https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80'); 
+  background-repeat: no-repeat;
+  background-position: fixed;
+  background-size: initial;
+  -webkit-background-size: initial;
+  -moz-background-size: initial;
+  -o-background-size: initial;
+}
+
+.wrapper {
   background: rgba(255,255,255,0.95);
+  width: 100%;
+  height: 100%;
 }
 
 .main-content {
   @include flex-centering();
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 6.1rem;
   color: $purple;
   height: 100%;
 
@@ -278,17 +284,18 @@ textarea {
   }
 
   .presentation{
-    margin-top: 5px;
+   margin-top: 4.5rem;
 
-    @media (max-height:900px) {
-      margin-top: 40px;
-    }
+   @media(max-height: 860px) {
+     margin-top: 2rem;
+   }
   }
 
   h2 {
     font-weight: 100;
     font-size: 3rem;
     font-style: italic;
+    margin-bottom: 13px;
   }
 
   p {
@@ -297,23 +304,11 @@ textarea {
     &.presentation-paragraph:not(.intro-paragraph)::before {
       content: '# '
     }
-
-    &.presentation-paragraph:last-of-type:not(.intro-paragraph) {
-      margin-bottom: 35px;
-    }
-
-    &.intro-paragraph:first-of-type:not(.presentation-paragraph) {
-      margin-top: 90px;
-    }
-    &.intro-paragraph:last-of-type:not(.presentation-paragraph) {
-      margin-bottom: 120px;
-    }
   }
 
   .main-img {
     border-radius: 50%;
     border: 2px groove $red;
-    margin-top: 40px;
   }
 }
 
@@ -467,4 +462,5 @@ input[type=file] {
     font-size: 14px;
   } 
 }
+
 

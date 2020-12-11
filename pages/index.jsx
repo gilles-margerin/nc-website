@@ -42,11 +42,13 @@ function Home(props) {
         langSelect={props.langSelect} 
         language={props.language}/>
       <section className="main-container">
-        <main className="main-content">
-          <Presentation language={props.language}/>
-          <img className='main-img' src="/nat-cv-2-280.jpg" alt="Natalia Carreño portrait"/>
-          <Introduction language={props.language}/>
-        </main>
+        <div className="wrapper">
+          <main className="main-content">
+            <Presentation language={props.language}/>
+            <img className='main-img' src="/nat-cv-2-280.jpg" alt="Natalia Carreño portrait"/>
+            <Introduction language={props.language}/>
+          </main>
+        </div>
       </section>
     </>
   )
