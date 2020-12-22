@@ -164,7 +164,7 @@ textarea {
     right: 25px;
     background: #fff;
     border-radius: 50%;
-    scale: 0.75;
+    transform: scale(0.8);
 
     @media (max-width: 768px) {
       top: -1px;
@@ -316,7 +316,7 @@ textarea {
   @include flex-centering();
   border: none;
   min-height: 600px;
-  margin: auto 0;
+  margin: 0.8rem 0 0;
 }
 
 .form-container section:not(.file-section){
@@ -325,7 +325,6 @@ textarea {
   padding: 0.5rem;
   
   & label {
-    background: #fff;
     padding: 0.15rem;
     font-size: 1.25rem;
     line-height: 25px;
@@ -369,6 +368,7 @@ textarea {
 
   label {
     @include flex-centering();
+    background: #fff;
     height: 58px;
     width: 100%;
     padding: 0;
@@ -423,7 +423,7 @@ button:not(.lang-btn) {
   color: #fff;
   font-family: inherit;
   font-size: 1.25rem;
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 0.8rem;
   padding: 1.2rem 0;
   width: 139px;
 
