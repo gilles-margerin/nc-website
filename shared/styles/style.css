@@ -304,6 +304,8 @@ textarea {
   font-size: 3rem;
   font-style: italic;
   margin-bottom: 13px;
+  color: #fff;
+  text-shadow: -1px -1px 2px #e285cb, 1px 1px 2px #6103b9, 2px 2px 1px #6103b9;
 }
 .main-content p {
   font-size: 1.4rem;

@@ -300,7 +300,7 @@ textarea {
   }
 
   .presentation{
-   margin-top: 4.5rem;
+    margin-top: 4.5rem;
 
    @media(max-height: 860px) {
      margin-top: 2rem;
@@ -312,6 +312,10 @@ textarea {
     font-size: 3rem;
     font-style: italic;
     margin-bottom: 13px;
+    color: #fff;
+    text-shadow: -1px -1px 2px rgb(226, 133, 203),
+      1px 1px 2px $purple,
+      2px 2px 1px $purple;
   }
 
   p {
