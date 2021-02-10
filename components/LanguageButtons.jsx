@@ -15,7 +15,8 @@ const LanguageButtons = (props) => {
       langSelect={() => props.langSelect(`${key}`)}
       value={`${buttonConfig[key]}`}
       className="lang-btn"
-      id={`${key}`}/>
+      id={`${key}`}
+      key={`${key}`}/>
     )
   }
 

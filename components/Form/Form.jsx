@@ -1,4 +1,5 @@
-import { useEffect } from "react"
+import AUTHORIZED_FILES from './AUTHORIZED_FILES'
+import FormContainer from './FormContainer'
 
 function Form(props) {
   const language = props.language
@@ -12,16 +13,6 @@ function Form(props) {
       size: true,
       list: true
     }
-
-    const authorizedFiles = [
-      "text/plain",
-      "application/rtf",
-      "application/msword",
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      "application/pdf",
-      "application/vnd.oasis.opendocument.text",
-      "application/vnd.oasis.opendocument.presentation"
-    ]
     
     if (userFiles.length + fileInput().files.length > 5) {
       fileInput().value='';
@@ -36,7 +27,7 @@ function Form(props) {
         return alert(`${file.name}${language.alerts[1]}`)
       }
 
-      !authorizedFiles.find(typeCheck => typeCheck === file.type) && function() {
+      !AUTHORIZED_FILES.find(typeCheck => typeCheck === file.type) && function() {
         fileInput().value='';
         fileChecks.type = false
         return alert(`${language.alerts[0]}`);
@@ -95,67 +86,12 @@ function Form(props) {
     userFiles.length = 0
   }
 
-  return(
-    <form 
-      action=""
-      id="contact-data" 
-      className="contact-form"
-      method="post"
-      encType="multipart/form-data"
-      onSubmit={handleSubmit}>
-      <fieldset className="form-container">
-        <section>
-          <label htmlFor="name">{language.contact[0]}</label>
-          <input 
-            type="text" 
-            name="name" 
-            id="name" 
-            autoComplete="name" 
-            autoFocus 
-            required/>
-        </section>
-        <section>
-          <label htmlFor="email">{language.contact[1]}</label>
-          <input type="email"
-            name="email"
-            id="email"
-            autoComplete="email"
-            required/>
-        </section>
-        <section>
-          <label htmlFor="subject">{language.contact[2]}</label>
-          <input 
-            type="text"
-            name="subject"
-            id="subject"/>
-        </section>
-        <section>
-          <label htmlFor="content">{language.contact[3]}</label>
-          <textarea 
-            name="content"
-            id="content" 
-             
-            required></textarea>
-        </section>
-        <section className="file-section">
-          <label id="file-uploader" htmlFor="file">{language.contact[4]}</label>
-          <input 
-            type="file"
-            name="file"
-            id="file"
-            multiple
-            onChange={handleFiles}
-            accept=".txt,.rtf,.doc,.docx,.pdf,.odt,.odp"/> 
-        </section>
-        <div className="file-display">
-            <ul className='file-list-container'>
-            </ul>
-        </div> 
-        <button 
-          className="submit-btn"
-          type="submit">{language.contact[5]}</button>
-      </fieldset>
-    </form>
+  return (
+    <FormContainer 
+      language={language} 
+      handleSubmit={handleSubmit}
+      handleFiles={handleFiles}
+    />
   )
 }
 
