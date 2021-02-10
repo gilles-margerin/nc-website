@@ -1,4 +1,4 @@
-import Button from './Button'
+import LanguageButtons from './LanguageButtons'
 
 function Dropdown(props) {
   
@@ -26,26 +26,9 @@ function Dropdown(props) {
     <div id ='lang-btn' className="lang-select" onClick={(e) => handleClick(e)}>
       <img src="/translating64.png" alt="language menu icon"/>
       <div className="lang-container init">
-        <Button 
-        handleLangSelect={props.handleLangSelect} 
-        langSelect={() => props.langSelect('en')} 
-        value="English"
-        id="en"
-        />
-
-        <Button 
-        handleLangSelect={props.handleLangSelect} 
-        langSelect={() => props.langSelect('es')} 
-        value="Español"
-        id="es"
-        />
-
-        <Button 
-        handleLangSelect={props.handleLangSelect} 
-        langSelect={() => props.langSelect('pt')}         
-        value="Português"
-        id="pt"
-        />
+        <LanguageButtons 
+          handleLangSelect={props.handleLangSelect}
+          langSelect={props.langSelect}/>
       </div>
     </div>
   )
